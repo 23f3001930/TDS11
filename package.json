@@ -1,0 +1,23 @@
+{
+  "name": "tds11",
+  "version": "1.0.0",
+  "description": "This project is a Retrieval-Augmented Generation (RAG) system that answers student questions using Discourse forum posts and course content from the 'Tools in Data Science' course.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/23f3001930/TDS11.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/23f3001930/TDS11/issues"
+  },
+  "homepage": "https://github.com/23f3001930/TDS11#readme",
+  "dependencies": {
+    "promptfoo": "^0.115.1"
+  }
+}

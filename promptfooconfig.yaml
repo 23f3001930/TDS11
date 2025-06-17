@@ -1,0 +1,107 @@
+description: TDS Virtual TA Evaluation
+
+prompts:
+  - "{{ question }}"
+
+providers:
+  - id: https
+    config:
+      url: http://127.0.0.1:8000
+      method: POST
+      headers:
+        Content-Type: application/json
+      body: |
+        {
+          "question": "{{ question }}"{% if image %},
+          "image": "{{ image }}"{% endif %}
+        }
+      transformResponse: json
+
+defaultTest:
+  options:
+    provider:
+      id: https
+    evaluator:
+      config:
+        url: https://aiproxy.sanand.workers.dev/openai/v1/chat/completions
+        method: POST
+        headers:
+          Content-Type: application/json
+          Authorization: "{{ API_KEY }}"
+        body: |
+          {
+            "model": "gpt-4o-mini",
+            "messages": [
+              {
+                "role": "system",
+                "content": "You are an evaluator that checks if an output meets specific criteria. Analyze the output based on the given rubric and respond with a JSON object containing {\"reason\": \"your analysis\", \"score\": number between 0.0 and 1.0, \"pass\": true/false}."
+              },
+              {
+                "role": "user",
+                "content": "Output to evaluate: {{ output }}\n\nRubric: {{ rubric }}"
+              }
+            ],
+            "temperature": 0
+          }
+        transformResponse: json
+
+  assert:
+    - type: is-json
+      value:
+        type: object
+        required: [answer, links]
+        properties:
+          answer: { type: string }
+          links:
+            type: array
+            items:
+              type: object
+              required: [url, text]
+              properties:
+                url: { type: string }
+                text: { type: string }
+
+tests:
+  - vars:
+      question: What are the core development tools every TDS student should master?
+      link: https://tds.s-anand.net/#/development-tools
+    rubric: |
+      The answer should mention tools like VS Code, Git, Jupyter Notebooks, Python, and shell/terminal usage. The answer must be clear, concise, and relevant to a TDS student's workflow.
+
+  - vars:
+      question: What are the most popular deployment tools covered in the TDS curriculum?
+      link: https://tds.s-anand.net/#/deployment-tools
+    rubric: |
+      The answer should include tools like Streamlit, Flask, and Docker. It should describe their role in deploying data science models or apps.
+
+  - vars:
+      question: How should I configure my OpenAI and AIPipe tokens for using LLMs in TDS?
+      link: https://tds.s-anand.net/#/large-language-models?id=ai-proxy-jan-2025
+    rubric: |
+      The answer should explain how to set API keys, where to put them (e.g., .env file), and how to validate the setup using curl or code.
+
+  - vars:
+      question: What are the three main ways to source data according to the Data Sourcing module?
+      link: https://tds.s-anand.net/#/data-sourcing
+    rubric: |
+      The answer should identify three data sourcing techniques such as using APIs, uploading files, and scraping websites, with brief explanations.
+
+  - vars:
+      question: What tools and methods are taught for cleaning and preparing data in the course?
+      link: https://tds.s-anand.net/#/data-preparation
+    rubric: |
+      The answer should mention pandas, regular expressions, handling missing values, and possibly scikit-learn preprocessing methods.
+
+  - vars:
+      question: What are key principles or tools highlighted for data visualization in TDS?
+      link: https://tds.s-anand.net/#/data-visualization
+    rubric: |
+      The answer should reference tools like matplotlib, seaborn, or Plotly and describe key principles such as clarity, storytelling, or insight communication.
+
+writeLatestResults: true
+
+commandLineOptions:
+  cache: false
+
+
+#promptfoo eval -c promptfooconfig.yaml --env-file .env
