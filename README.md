@@ -44,7 +44,7 @@ pip install numpy
 ```
 uvicorn app:app --reload
 ```
-```
+
 ```
 npm install -g promptfoo
 ```
