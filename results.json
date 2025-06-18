@@ -1,0 +1,1272 @@
+{
+  "evalId": "eval-h6t-2025-06-18T14:00:32",
+  "results": {
+    "version": 3,
+    "timestamp": "2025-06-18T14:00:32.302Z",
+    "prompts": [
+      {
+        "raw": "{{ question }}",
+        "label": "{{ question }}",
+        "id": "ef6fb466fa88d98eeffaf3867ef8b795f2a823ec6fb50efed675159da8dd4140",
+        "provider": "http://127.0.0.1:8000/query",
+        "metrics": {
+          "score": 6,
+          "testPassCount": 6,
+          "testFailCount": 0,
+          "testErrorCount": 0,
+          "assertPassCount": 6,
+          "assertFailCount": 0,
+          "totalLatencyMs": 67900,
+          "tokenUsage": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 6,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0
+            }
+          },
+          "namedScores": {},
+          "namedScoresCount": {},
+          "cost": 0
+        }
+      }
+    ],
+    "results": [
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "is-json",
+                "value": {
+                  "type": "object",
+                  "required": [
+                    "answer",
+                    "links"
+                  ],
+                  "properties": {
+                    "answer": {
+                      "type": "string"
+                    },
+                    "links": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "url",
+                          "text"
+                        ],
+                        "properties": {
+                          "url": {
+                            "type": "string"
+                          },
+                          "text": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "assertion": null
+        },
+        "id": "ba0174ef-920b-46b2-8d79-ff2ad8159927",
+        "latencyMs": 10219,
+        "namedScores": {},
+        "prompt": {
+          "raw": "What are the most popular deployment tools covered in the TDS curriculum?",
+          "label": "{{ question }}"
+        },
+        "promptId": "ef6fb466fa88d98eeffaf3867ef8b795f2a823ec6fb50efed675159da8dd4140",
+        "promptIdx": 0,
+        "provider": {
+          "id": "http://127.0.0.1:8000/query",
+          "label": ""
+        },
+        "response": {
+          "raw": "{\"answer\":\"I don't have enough information to answer this question.\",\"links\":[{\"url\":\"https://discourse.onlinedegree.iitm.ac.in/t/ga1-development-tools-discussion-thread-tds-jan-2025/161083/140\",\"text\":\"2 posts were merged into an existing topic: GA2 - Deployment Tools - Discussion Thread [TDS May 2025...\"},{\"url\":\"https://tds.s-anand.net/#/deployment-tools\",\"text\":\"[Deployment Tools](#/deployment-tools?id=deployment-tools) =========================================...\"},{\"url\":\"https://discourse.onlinedegree.iitm.ac.in/t/ga4-data-sourcing-discussion-thread-tds-jan-2025/165959/303\",\"text\":\"GA2 - Deployment Tools - Discussion Thread [TDS Jan 2025] Tools in Data Science We have removed that...\"},{\"url\":\"https://discourse.onlinedegree.iitm.ac.in/t/tds-assignment-is-not-submitting/166189/4\",\"text\":\"GA2 - Deployment Tools - Discussion Thread [TDS Jan 2025] Tools in Data Science We have removed that...\"}]}",
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "content-length": "912",
+                "content-type": "application/json",
+                "date": "Wed, 18 Jun 2025 14:00:31 GMT",
+                "server": "uvicorn"
+              }
+            }
+          },
+          "output": {
+            "answer": "I don't have enough information to answer this question.",
+            "links": [
+              {
+                "url": "https://discourse.onlinedegree.iitm.ac.in/t/ga1-development-tools-discussion-thread-tds-jan-2025/161083/140",
+                "text": "2 posts were merged into an existing topic: GA2 - Deployment Tools - Discussion Thread [TDS May 2025..."
+              },
+              {
+                "url": "https://tds.s-anand.net/#/deployment-tools",
+                "text": "[Deployment Tools](#/deployment-tools?id=deployment-tools) =========================================..."
+              },
+              {
+                "url": "https://discourse.onlinedegree.iitm.ac.in/t/ga4-data-sourcing-discussion-thread-tds-jan-2025/165959/303",
+                "text": "GA2 - Deployment Tools - Discussion Thread [TDS Jan 2025] Tools in Data Science We have removed that..."
+              },
+              {
+                "url": "https://discourse.onlinedegree.iitm.ac.in/t/tds-assignment-is-not-submitting/166189/4",
+                "text": "GA2 - Deployment Tools - Discussion Thread [TDS Jan 2025] Tools in Data Science We have removed that..."
+              }
+            ]
+          }
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "vars": {
+            "question": "What are the most popular deployment tools covered in the TDS curriculum?",
+            "link": "https://tds.s-anand.net/#/deployment-tools"
+          },
+          "rubric": "The answer should include tools like Streamlit, Flask, and Docker. It should describe their role in deploying data science models or apps.\n",
+          "assert": [
+            {
+              "type": "is-json",
+              "value": {
+                "type": "object",
+                "required": [
+                  "answer",
+                  "links"
+                ],
+                "properties": {
+                  "answer": {
+                    "type": "string"
+                  },
+                  "links": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "url",
+                        "text"
+                      ],
+                      "properties": {
+                        "url": {
+                          "type": "string"
+                        },
+                        "text": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "options": {
+            "provider": {
+              "id": "https"
+            },
+            "evaluator": {
+              "config": {
+                "url": "https://aiproxy.sanand.workers.dev/openai/v1/chat/completions",
+                "method": "POST",
+                "headers": {
+                  "Content-Type": "application/json",
+                  "Authorization": "{{ API_KEY }}"
+                },
+                "body": "{\n  \"model\": \"gpt-4o-mini\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are an evaluator that checks if an output meets specific criteria. Analyze the output based on the given rubric and respond with a JSON object containing {\\\"reason\\\": \\\"your analysis\\\", \\\"score\\\": number between 0.0 and 1.0, \\\"pass\\\": true/false}.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"Output to evaluate: {{ output }}\\n\\nRubric: {{ rubric }}\"\n    }\n  ],\n  \"temperature\": 0\n}\n",
+                "transformResponse": "json"
+              }
+            }
+          },
+          "metadata": {}
+        },
+        "testIdx": 1,
+        "vars": {
+          "question": "What are the most popular deployment tools covered in the TDS curriculum?",
+          "link": "https://tds.s-anand.net/#/deployment-tools"
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "content-length": "912",
+              "content-type": "application/json",
+              "date": "Wed, 18 Jun 2025 14:00:31 GMT",
+              "server": "uvicorn"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "is-json",
+                "value": {
+                  "type": "object",
+                  "required": [
+                    "answer",
+                    "links"
+                  ],
+                  "properties": {
+                    "answer": {
+                      "type": "string"
+                    },
+                    "links": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "url",
+                          "text"
+                        ],
+                        "properties": {
+                          "url": {
+                            "type": "string"
+                          },
+                          "text": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "assertion": null
+        },
+        "id": "f622f9ce-ef4f-4ff3-8bca-ed46bbbfdb57",
+        "latencyMs": 13327,
+        "namedScores": {},
+        "prompt": {
+          "raw": "What are the three main ways to source data according to the Data Sourcing module?",
+          "label": "{{ question }}"
+        },
+        "promptId": "ef6fb466fa88d98eeffaf3867ef8b795f2a823ec6fb50efed675159da8dd4140",
+        "promptIdx": 0,
+        "provider": {
+          "id": "http://127.0.0.1:8000/query",
+          "label": ""
+        },
+        "response": {
+          "raw": "{\"answer\":\"1. The three main ways to source data according to the Data Sourcing module are: \\n   - Downloading the data from a provided source or public data source.\\n   - Querying the data from a database, API, or library.\\n   - Scraping the data from web pages, PDF files, Word documents, or Excel files when it is not readily available in a convenient form.\\n\\n2.\",\"links\":[{\"url\":\"https://tds.s-anand.net/#/data-sourcing\",\"text\":\"There are three ways you can get the data. 1. The first is you can **download** the data... 2. The second way is you can **query it** from somewhere... 3. The third way is you have to **scrape it**.\"}]}",
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "content-length": "636",
+                "content-type": "application/json",
+                "date": "Wed, 18 Jun 2025 14:00:31 GMT",
+                "server": "uvicorn"
+              }
+            }
+          },
+          "output": {
+            "answer": "1. The three main ways to source data according to the Data Sourcing module are: \n   - Downloading the data from a provided source or public data source.\n   - Querying the data from a database, API, or library.\n   - Scraping the data from web pages, PDF files, Word documents, or Excel files when it is not readily available in a convenient form.\n\n2.",
+            "links": [
+              {
+                "url": "https://tds.s-anand.net/#/data-sourcing",
+                "text": "There are three ways you can get the data. 1. The first is you can **download** the data... 2. The second way is you can **query it** from somewhere... 3. The third way is you have to **scrape it**."
+              }
+            ]
+          }
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "vars": {
+            "question": "What are the three main ways to source data according to the Data Sourcing module?",
+            "link": "https://tds.s-anand.net/#/data-sourcing"
+          },
+          "rubric": "The answer should identify three data sourcing techniques such as using APIs, uploading files, and scraping websites, with brief explanations.\n",
+          "assert": [
+            {
+              "type": "is-json",
+              "value": {
+                "type": "object",
+                "required": [
+                  "answer",
+                  "links"
+                ],
+                "properties": {
+                  "answer": {
+                    "type": "string"
+                  },
+                  "links": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "url",
+                        "text"
+                      ],
+                      "properties": {
+                        "url": {
+                          "type": "string"
+                        },
+                        "text": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "options": {
+            "provider": {
+              "id": "https"
+            },
+            "evaluator": {
+              "config": {
+                "url": "https://aiproxy.sanand.workers.dev/openai/v1/chat/completions",
+                "method": "POST",
+                "headers": {
+                  "Content-Type": "application/json",
+                  "Authorization": "{{ API_KEY }}"
+                },
+                "body": "{\n  \"model\": \"gpt-4o-mini\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are an evaluator that checks if an output meets specific criteria. Analyze the output based on the given rubric and respond with a JSON object containing {\\\"reason\\\": \\\"your analysis\\\", \\\"score\\\": number between 0.0 and 1.0, \\\"pass\\\": true/false}.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"Output to evaluate: {{ output }}\\n\\nRubric: {{ rubric }}\"\n    }\n  ],\n  \"temperature\": 0\n}\n",
+                "transformResponse": "json"
+              }
+            }
+          },
+          "metadata": {}
+        },
+        "testIdx": 3,
+        "vars": {
+          "question": "What are the three main ways to source data according to the Data Sourcing module?",
+          "link": "https://tds.s-anand.net/#/data-sourcing"
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "content-length": "636",
+              "content-type": "application/json",
+              "date": "Wed, 18 Jun 2025 14:00:31 GMT",
+              "server": "uvicorn"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "is-json",
+                "value": {
+                  "type": "object",
+                  "required": [
+                    "answer",
+                    "links"
+                  ],
+                  "properties": {
+                    "answer": {
+                      "type": "string"
+                    },
+                    "links": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "url",
+                          "text"
+                        ],
+                        "properties": {
+                          "url": {
+                            "type": "string"
+                          },
+                          "text": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "assertion": null
+        },
+        "id": "88a3ce98-7cae-4e73-ace7-be251837d519",
+        "latencyMs": 13355,
+        "namedScores": {},
+        "prompt": {
+          "raw": "What are the core development tools every TDS student should master?",
+          "label": "{{ question }}"
+        },
+        "promptId": "ef6fb466fa88d98eeffaf3867ef8b795f2a823ec6fb50efed675159da8dd4140",
+        "promptIdx": 0,
+        "provider": {
+          "id": "http://127.0.0.1:8000/query",
+          "label": ""
+        },
+        "response": {
+          "raw": "{\"answer\":\"1. The core development tools that every TDS (Tools in Data Science) student should master are fundamental to data science and include tools for sourcing data, transforming it, analyzing it, visualizing it, and deploying models. These tools are essential for aligning with current best practices in the industry and making students more adaptable in a fast-evolving field.\",\"links\":[{\"url\":\"https://tds.s-anand.net/#/development-tools\",\"text\":\"The tools we cover here are not just popular, they’re the core technology behind most of today’s data science and software development.\"},{\"url\":\"https://tds.s-anand.net/#/README\",\"text\":\"1. **[Development Tools](#/development-tools)** and concepts to **build** models and apps.\"}]}",
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "content-length": "741",
+                "content-type": "application/json",
+                "date": "Wed, 18 Jun 2025 14:00:31 GMT",
+                "server": "uvicorn"
+              }
+            }
+          },
+          "output": {
+            "answer": "1. The core development tools that every TDS (Tools in Data Science) student should master are fundamental to data science and include tools for sourcing data, transforming it, analyzing it, visualizing it, and deploying models. These tools are essential for aligning with current best practices in the industry and making students more adaptable in a fast-evolving field.",
+            "links": [
+              {
+                "url": "https://tds.s-anand.net/#/development-tools",
+                "text": "The tools we cover here are not just popular, they’re the core technology behind most of today’s data science and software development."
+              },
+              {
+                "url": "https://tds.s-anand.net/#/README",
+                "text": "1. **[Development Tools](#/development-tools)** and concepts to **build** models and apps."
+              }
+            ]
+          }
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "vars": {
+            "question": "What are the core development tools every TDS student should master?",
+            "link": "https://tds.s-anand.net/#/development-tools"
+          },
+          "rubric": "The answer should mention tools like VS Code, Git, Jupyter Notebooks, Python, and shell/terminal usage. The answer must be clear, concise, and relevant to a TDS student's workflow.\n",
+          "assert": [
+            {
+              "type": "is-json",
+              "value": {
+                "type": "object",
+                "required": [
+                  "answer",
+                  "links"
+                ],
+                "properties": {
+                  "answer": {
+                    "type": "string"
+                  },
+                  "links": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "url",
+                        "text"
+                      ],
+                      "properties": {
+                        "url": {
+                          "type": "string"
+                        },
+                        "text": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "options": {
+            "provider": {
+              "id": "https"
+            },
+            "evaluator": {
+              "config": {
+                "url": "https://aiproxy.sanand.workers.dev/openai/v1/chat/completions",
+                "method": "POST",
+                "headers": {
+                  "Content-Type": "application/json",
+                  "Authorization": "{{ API_KEY }}"
+                },
+                "body": "{\n  \"model\": \"gpt-4o-mini\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are an evaluator that checks if an output meets specific criteria. Analyze the output based on the given rubric and respond with a JSON object containing {\\\"reason\\\": \\\"your analysis\\\", \\\"score\\\": number between 0.0 and 1.0, \\\"pass\\\": true/false}.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"Output to evaluate: {{ output }}\\n\\nRubric: {{ rubric }}\"\n    }\n  ],\n  \"temperature\": 0\n}\n",
+                "transformResponse": "json"
+              }
+            }
+          },
+          "metadata": {}
+        },
+        "testIdx": 0,
+        "vars": {
+          "question": "What are the core development tools every TDS student should master?",
+          "link": "https://tds.s-anand.net/#/development-tools"
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "content-length": "741",
+              "content-type": "application/json",
+              "date": "Wed, 18 Jun 2025 14:00:31 GMT",
+              "server": "uvicorn"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "is-json",
+                "value": {
+                  "type": "object",
+                  "required": [
+                    "answer",
+                    "links"
+                  ],
+                  "properties": {
+                    "answer": {
+                      "type": "string"
+                    },
+                    "links": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "url",
+                          "text"
+                        ],
+                        "properties": {
+                          "url": {
+                            "type": "string"
+                          },
+                          "text": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "assertion": null
+        },
+        "id": "d6af14cd-0b67-4f6c-850b-c990290f1f9a",
+        "latencyMs": 16682,
+        "namedScores": {},
+        "prompt": {
+          "raw": "How should I configure my OpenAI and AIPipe tokens for using LLMs in TDS?",
+          "label": "{{ question }}"
+        },
+        "promptId": "ef6fb466fa88d98eeffaf3867ef8b795f2a823ec6fb50efed675159da8dd4140",
+        "promptIdx": 0,
+        "provider": {
+          "id": "http://127.0.0.1:8000/query",
+          "label": ""
+        },
+        "response": {
+          "raw": "{\"answer\":\"1. To configure your OpenAI and AIPipe tokens for using LLMs in TDS, you need to follow these steps: \\n   - Replace `OPENAI_BASE_URL` with either `https://aipipe.org/openrouter/v1...` or `https://aipipe.org/openai/v1...`.\\n   - Replace `OPENAI_API_KEY` with the `AIPIPE_TOKEN`, which you can obtain by logging into AIPipe.\\n   - Update the model names from formats like `gpt-4.1-nano` to `openai/gpt-4.1-nano`.\\n\\n2.\",\"links\":[{\"url\":\"https://tds.s-anand.net/#/large-language-models?id=ai-proxy-jan-2025\",\"text\":\"Replace `OPENAI_BASE_URL`, i.e. `https://api.openai.com/v1` with `https://aipipe.org/openrouter/v1...` or `https://aipipe.org/openai/v1...`.\"},{\"url\":\"https://tds.s-anand.net/#/large-language-models?id=ai-proxy-jan-2025\",\"text\":\"Replace `OPENAI_API_KEY` with the [`AIPIPE_TOKEN`](https://aipipe.org/login).\"}]}",
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "content-length": "834",
+                "content-type": "application/json",
+                "date": "Wed, 18 Jun 2025 14:00:31 GMT",
+                "server": "uvicorn"
+              }
+            }
+          },
+          "output": {
+            "answer": "1. To configure your OpenAI and AIPipe tokens for using LLMs in TDS, you need to follow these steps: \n   - Replace `OPENAI_BASE_URL` with either `https://aipipe.org/openrouter/v1...` or `https://aipipe.org/openai/v1...`.\n   - Replace `OPENAI_API_KEY` with the `AIPIPE_TOKEN`, which you can obtain by logging into AIPipe.\n   - Update the model names from formats like `gpt-4.1-nano` to `openai/gpt-4.1-nano`.\n\n2.",
+            "links": [
+              {
+                "url": "https://tds.s-anand.net/#/large-language-models?id=ai-proxy-jan-2025",
+                "text": "Replace `OPENAI_BASE_URL`, i.e. `https://api.openai.com/v1` with `https://aipipe.org/openrouter/v1...` or `https://aipipe.org/openai/v1...`."
+              },
+              {
+                "url": "https://tds.s-anand.net/#/large-language-models?id=ai-proxy-jan-2025",
+                "text": "Replace `OPENAI_API_KEY` with the [`AIPIPE_TOKEN`](https://aipipe.org/login)."
+              }
+            ]
+          }
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "vars": {
+            "question": "How should I configure my OpenAI and AIPipe tokens for using LLMs in TDS?",
+            "link": "https://tds.s-anand.net/#/large-language-models?id=ai-proxy-jan-2025"
+          },
+          "rubric": "The answer should explain how to set API keys, where to put them (e.g., .env file), and how to validate the setup using curl or code.\n",
+          "assert": [
+            {
+              "type": "is-json",
+              "value": {
+                "type": "object",
+                "required": [
+                  "answer",
+                  "links"
+                ],
+                "properties": {
+                  "answer": {
+                    "type": "string"
+                  },
+                  "links": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "url",
+                        "text"
+                      ],
+                      "properties": {
+                        "url": {
+                          "type": "string"
+                        },
+                        "text": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "options": {
+            "provider": {
+              "id": "https"
+            },
+            "evaluator": {
+              "config": {
+                "url": "https://aiproxy.sanand.workers.dev/openai/v1/chat/completions",
+                "method": "POST",
+                "headers": {
+                  "Content-Type": "application/json",
+                  "Authorization": "{{ API_KEY }}"
+                },
+                "body": "{\n  \"model\": \"gpt-4o-mini\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are an evaluator that checks if an output meets specific criteria. Analyze the output based on the given rubric and respond with a JSON object containing {\\\"reason\\\": \\\"your analysis\\\", \\\"score\\\": number between 0.0 and 1.0, \\\"pass\\\": true/false}.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"Output to evaluate: {{ output }}\\n\\nRubric: {{ rubric }}\"\n    }\n  ],\n  \"temperature\": 0\n}\n",
+                "transformResponse": "json"
+              }
+            }
+          },
+          "metadata": {}
+        },
+        "testIdx": 2,
+        "vars": {
+          "question": "How should I configure my OpenAI and AIPipe tokens for using LLMs in TDS?",
+          "link": "https://tds.s-anand.net/#/large-language-models?id=ai-proxy-jan-2025"
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "content-length": "834",
+              "content-type": "application/json",
+              "date": "Wed, 18 Jun 2025 14:00:31 GMT",
+              "server": "uvicorn"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "is-json",
+                "value": {
+                  "type": "object",
+                  "required": [
+                    "answer",
+                    "links"
+                  ],
+                  "properties": {
+                    "answer": {
+                      "type": "string"
+                    },
+                    "links": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "url",
+                          "text"
+                        ],
+                        "properties": {
+                          "url": {
+                            "type": "string"
+                          },
+                          "text": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "assertion": null
+        },
+        "id": "ac053aa9-7457-4901-bd76-f5ead9eaeafa",
+        "latencyMs": 8137,
+        "namedScores": {},
+        "prompt": {
+          "raw": "What tools and methods are taught for cleaning and preparing data in the course?",
+          "label": "{{ question }}"
+        },
+        "promptId": "ef6fb466fa88d98eeffaf3867ef8b795f2a823ec6fb50efed675159da8dd4140",
+        "promptIdx": 0,
+        "provider": {
+          "id": "http://127.0.0.1:8000/query",
+          "label": ""
+        },
+        "response": {
+          "raw": "{\"answer\":\"1. The course teaches several tools and methods for cleaning and preparing data, including the use of OpenRefine for data cleaning, which focuses on resolving entity discrepancies through data upload, faceting, and clustering methodologies. It also covers data preparation techniques in a text editor like Visual Studio Code, where students learn to format JSON files, sort lines, delete duplicates, and replace text. Additionally, the course emphasizes the importance of cleaning raw data to handle errors, inconsistencies, and missing values before analysis.\",\"links\":[{\"url\":\"https://tds.s-anand.net/#/cleaning-data-with-openrefine?id=cleaning-data-with-openrefine\",\"text\":\"This session covers the use of OpenRefine for data cleaning, focusing on resolving entity discrepancies.\"},{\"url\":\"https://tds.s-anand.net/#/data-preparation-in-the-editor?id=data-preparation-in-the-editor\",\"text\":\"You’ll learn how to use a text editor Visual Studio Code to process and clean data.\"}]}",
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "content-length": "992",
+                "content-type": "application/json",
+                "date": "Wed, 18 Jun 2025 14:00:41 GMT",
+                "server": "uvicorn"
+              }
+            }
+          },
+          "output": {
+            "answer": "1. The course teaches several tools and methods for cleaning and preparing data, including the use of OpenRefine for data cleaning, which focuses on resolving entity discrepancies through data upload, faceting, and clustering methodologies. It also covers data preparation techniques in a text editor like Visual Studio Code, where students learn to format JSON files, sort lines, delete duplicates, and replace text. Additionally, the course emphasizes the importance of cleaning raw data to handle errors, inconsistencies, and missing values before analysis.",
+            "links": [
+              {
+                "url": "https://tds.s-anand.net/#/cleaning-data-with-openrefine?id=cleaning-data-with-openrefine",
+                "text": "This session covers the use of OpenRefine for data cleaning, focusing on resolving entity discrepancies."
+              },
+              {
+                "url": "https://tds.s-anand.net/#/data-preparation-in-the-editor?id=data-preparation-in-the-editor",
+                "text": "You’ll learn how to use a text editor Visual Studio Code to process and clean data."
+              }
+            ]
+          }
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "vars": {
+            "question": "What tools and methods are taught for cleaning and preparing data in the course?",
+            "link": "https://tds.s-anand.net/#/data-preparation"
+          },
+          "rubric": "The answer should mention pandas, regular expressions, handling missing values, and possibly scikit-learn preprocessing methods.\n",
+          "assert": [
+            {
+              "type": "is-json",
+              "value": {
+                "type": "object",
+                "required": [
+                  "answer",
+                  "links"
+                ],
+                "properties": {
+                  "answer": {
+                    "type": "string"
+                  },
+                  "links": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "url",
+                        "text"
+                      ],
+                      "properties": {
+                        "url": {
+                          "type": "string"
+                        },
+                        "text": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "options": {
+            "provider": {
+              "id": "https"
+            },
+            "evaluator": {
+              "config": {
+                "url": "https://aiproxy.sanand.workers.dev/openai/v1/chat/completions",
+                "method": "POST",
+                "headers": {
+                  "Content-Type": "application/json",
+                  "Authorization": "{{ API_KEY }}"
+                },
+                "body": "{\n  \"model\": \"gpt-4o-mini\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are an evaluator that checks if an output meets specific criteria. Analyze the output based on the given rubric and respond with a JSON object containing {\\\"reason\\\": \\\"your analysis\\\", \\\"score\\\": number between 0.0 and 1.0, \\\"pass\\\": true/false}.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"Output to evaluate: {{ output }}\\n\\nRubric: {{ rubric }}\"\n    }\n  ],\n  \"temperature\": 0\n}\n",
+                "transformResponse": "json"
+              }
+            }
+          },
+          "metadata": {}
+        },
+        "testIdx": 4,
+        "vars": {
+          "question": "What tools and methods are taught for cleaning and preparing data in the course?",
+          "link": "https://tds.s-anand.net/#/data-preparation"
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "content-length": "992",
+              "content-type": "application/json",
+              "date": "Wed, 18 Jun 2025 14:00:41 GMT",
+              "server": "uvicorn"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "is-json",
+                "value": {
+                  "type": "object",
+                  "required": [
+                    "answer",
+                    "links"
+                  ],
+                  "properties": {
+                    "answer": {
+                      "type": "string"
+                    },
+                    "links": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "url",
+                          "text"
+                        ],
+                        "properties": {
+                          "url": {
+                            "type": "string"
+                          },
+                          "text": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "assertion": null
+        },
+        "id": "d1781f8c-321a-4ee2-bc0d-83f3a076b2a2",
+        "latencyMs": 6180,
+        "namedScores": {},
+        "prompt": {
+          "raw": "What are key principles or tools highlighted for data visualization in TDS?",
+          "label": "{{ question }}"
+        },
+        "promptId": "ef6fb466fa88d98eeffaf3867ef8b795f2a823ec6fb50efed675159da8dd4140",
+        "promptIdx": 0,
+        "provider": {
+          "id": "http://127.0.0.1:8000/query",
+          "label": ""
+        },
+        "response": {
+          "raw": "{\"answer\":\"1. The key principles or tools highlighted for data visualization in TDS include the ability to communicate insights as visual stories. This involves using various tools and concepts to effectively present data findings in a visually engaging manner. The course emphasizes the importance of data visualization as a crucial step in the data analysis process.\",\"links\":[{\"url\":\"https://tds.s-anand.net/#/README\",\"text\":\"Data Visualization to communicate those insights as visual stories.\"},{\"url\":\"https://tds.s-anand.net/#/README\",\"text\":\"Data Analysis to find surprising insights in the data.\"}]}",
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "content-length": "607",
+                "content-type": "application/json",
+                "date": "Wed, 18 Jun 2025 14:00:44 GMT",
+                "server": "uvicorn"
+              }
+            }
+          },
+          "output": {
+            "answer": "1. The key principles or tools highlighted for data visualization in TDS include the ability to communicate insights as visual stories. This involves using various tools and concepts to effectively present data findings in a visually engaging manner. The course emphasizes the importance of data visualization as a crucial step in the data analysis process.",
+            "links": [
+              {
+                "url": "https://tds.s-anand.net/#/README",
+                "text": "Data Visualization to communicate those insights as visual stories."
+              },
+              {
+                "url": "https://tds.s-anand.net/#/README",
+                "text": "Data Analysis to find surprising insights in the data."
+              }
+            ]
+          }
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "vars": {
+            "question": "What are key principles or tools highlighted for data visualization in TDS?",
+            "link": "https://tds.s-anand.net/#/data-visualization"
+          },
+          "rubric": "The answer should reference tools like matplotlib, seaborn, or Plotly and describe key principles such as clarity, storytelling, or insight communication.\n",
+          "assert": [
+            {
+              "type": "is-json",
+              "value": {
+                "type": "object",
+                "required": [
+                  "answer",
+                  "links"
+                ],
+                "properties": {
+                  "answer": {
+                    "type": "string"
+                  },
+                  "links": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "url",
+                        "text"
+                      ],
+                      "properties": {
+                        "url": {
+                          "type": "string"
+                        },
+                        "text": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "options": {
+            "provider": {
+              "id": "https"
+            },
+            "evaluator": {
+              "config": {
+                "url": "https://aiproxy.sanand.workers.dev/openai/v1/chat/completions",
+                "method": "POST",
+                "headers": {
+                  "Content-Type": "application/json",
+                  "Authorization": "{{ API_KEY }}"
+                },
+                "body": "{\n  \"model\": \"gpt-4o-mini\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are an evaluator that checks if an output meets specific criteria. Analyze the output based on the given rubric and respond with a JSON object containing {\\\"reason\\\": \\\"your analysis\\\", \\\"score\\\": number between 0.0 and 1.0, \\\"pass\\\": true/false}.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"Output to evaluate: {{ output }}\\n\\nRubric: {{ rubric }}\"\n    }\n  ],\n  \"temperature\": 0\n}\n",
+                "transformResponse": "json"
+              }
+            }
+          },
+          "metadata": {}
+        },
+        "testIdx": 5,
+        "vars": {
+          "question": "What are key principles or tools highlighted for data visualization in TDS?",
+          "link": "https://tds.s-anand.net/#/data-visualization"
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "content-length": "607",
+              "content-type": "application/json",
+              "date": "Wed, 18 Jun 2025 14:00:44 GMT",
+              "server": "uvicorn"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      }
+    ],
+    "stats": {
+      "successes": 6,
+      "failures": 0,
+      "errors": 0,
+      "tokenUsage": {
+        "cached": 0,
+        "completion": 0,
+        "prompt": 0,
+        "total": 0,
+        "numRequests": 6,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0
+        }
+      }
+    }
+  },
+  "config": {
+    "tags": {},
+    "description": "TDS Virtual TA Evaluation",
+    "prompts": [
+      "{{ question }}"
+    ],
+    "providers": [
+      {
+        "id": "https",
+        "config": {
+          "url": "http://127.0.0.1:8000/query",
+          "method": "POST",
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": "{\n  \"question\": \"{{ question }}\"{% if image %},\n  \"image\": \"{{ image }}\"{% endif %}\n}\n",
+          "transformResponse": "json"
+        }
+      }
+    ],
+    "tests": [
+      {
+        "vars": {
+          "question": "What are the core development tools every TDS student should master?",
+          "link": "https://tds.s-anand.net/#/development-tools"
+        },
+        "rubric": "The answer should mention tools like VS Code, Git, Jupyter Notebooks, Python, and shell/terminal usage. The answer must be clear, concise, and relevant to a TDS student's workflow.\n"
+      },
+      {
+        "vars": {
+          "question": "What are the most popular deployment tools covered in the TDS curriculum?",
+          "link": "https://tds.s-anand.net/#/deployment-tools"
+        },
+        "rubric": "The answer should include tools like Streamlit, Flask, and Docker. It should describe their role in deploying data science models or apps.\n"
+      },
+      {
+        "vars": {
+          "question": "How should I configure my OpenAI and AIPipe tokens for using LLMs in TDS?",
+          "link": "https://tds.s-anand.net/#/large-language-models?id=ai-proxy-jan-2025"
+        },
+        "rubric": "The answer should explain how to set API keys, where to put them (e.g., .env file), and how to validate the setup using curl or code.\n"
+      },
+      {
+        "vars": {
+          "question": "What are the three main ways to source data according to the Data Sourcing module?",
+          "link": "https://tds.s-anand.net/#/data-sourcing"
+        },
+        "rubric": "The answer should identify three data sourcing techniques such as using APIs, uploading files, and scraping websites, with brief explanations.\n"
+      },
+      {
+        "vars": {
+          "question": "What tools and methods are taught for cleaning and preparing data in the course?",
+          "link": "https://tds.s-anand.net/#/data-preparation"
+        },
+        "rubric": "The answer should mention pandas, regular expressions, handling missing values, and possibly scikit-learn preprocessing methods.\n"
+      },
+      {
+        "vars": {
+          "question": "What are key principles or tools highlighted for data visualization in TDS?",
+          "link": "https://tds.s-anand.net/#/data-visualization"
+        },
+        "rubric": "The answer should reference tools like matplotlib, seaborn, or Plotly and describe key principles such as clarity, storytelling, or insight communication.\n"
+      }
+    ],
+    "scenarios": [],
+    "env": {},
+    "sharing": true,
+    "defaultTest": {
+      "options": {
+        "provider": {
+          "id": "https"
+        },
+        "evaluator": {
+          "config": {
+            "url": "https://aiproxy.sanand.workers.dev/openai/v1/chat/completions",
+            "method": "POST",
+            "headers": {
+              "Content-Type": "application/json",
+              "Authorization": "{{ API_KEY }}"
+            },
+            "body": "{\n  \"model\": \"gpt-4o-mini\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are an evaluator that checks if an output meets specific criteria. Analyze the output based on the given rubric and respond with a JSON object containing {\\\"reason\\\": \\\"your analysis\\\", \\\"score\\\": number between 0.0 and 1.0, \\\"pass\\\": true/false}.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"Output to evaluate: {{ output }}\\n\\nRubric: {{ rubric }}\"\n    }\n  ],\n  \"temperature\": 0\n}\n",
+            "transformResponse": "json"
+          }
+        }
+      },
+      "assert": [
+        {
+          "type": "is-json",
+          "value": {
+            "type": "object",
+            "required": [
+              "answer",
+              "links"
+            ],
+            "properties": {
+              "answer": {
+                "type": "string"
+              },
+              "links": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "url",
+                    "text"
+                  ],
+                  "properties": {
+                    "url": {
+                      "type": "string"
+                    },
+                    "text": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "vars": {},
+      "metadata": {}
+    },
+    "outputPath": [
+      "results.json"
+    ],
+    "extensions": [],
+    "metadata": {}
+  },
+  "shareableUrl": null
+}
