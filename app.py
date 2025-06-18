@@ -732,6 +732,10 @@ async def proxy_to_query(request: Request):
     image = data.get("image")
     return await query_knowledge_base(QueryRequest(question=question, image=image))
 
+@app.get("/query")
+def query_get_redirect():
+    return {"message": "This endpoint only accepts POST requests."}
+
 @app.get("/")
 async def root():
     return {"message": " FastAPI app is deployed on Vercel and running successfully!"}
